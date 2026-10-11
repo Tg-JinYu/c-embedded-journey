@@ -1,0 +1,18 @@
+# 忽略编译产物
+*.o
+*.out
+a.out
+bin/
+build/
+
+# 忽略 VSCode 本地配置
+.vscode/
+*.code-workspace
+
+# 忽略系统缓存文件
+.DS_Store
+*~
+
+# 忽略各种临时文件
+*.swp
+*.tmp
