@@ -4,16 +4,16 @@
 char *my_strstr(const char *p1,const char *p2){
     if(*p2 == '\0') return (char *)p1;
     
-    const char *p1_start = p1;
+    const char *p1_start = p1;  //用于帮助p1回溯到检测前的位置
     const char *p2_start = p2;
     while(*p1_start != '\0'){
-        p1 = p1_start;
-        p2 = p2_start;
+        p1 = p1_start;          //令p1指回到检测子串之前的位置
+        p2 = p2_start;          //让p2指回到原本子串的开头
         while(*p2 == *p1 && *p1 !='\0' && *p2 != '\0'){
             p1++;
             p2++;
             if(*p2 == '\0'){
-                return (char *)p1_start;
+                return (char *)p1_start;    //返回首次找到子串时的地址
             }
         }
         p1_start++;
