@@ -95,7 +95,7 @@
 ### 🧠 知识点总结
 
 #### 1. my_memcpy（内存拷贝）
-- **void* 与字节操作**：`memcpy` 接收 `void *dest` 和 `const void *src`，不关心数据类型。为了逐字节拷贝，需要将其强制转换为 `char *` 和 `const char *`，使指针 `++` 一次刚好移动 1 个字节。
+- **void 与字节操作**：`memcpy` 接收 `void *dest` 和 `const void *src`，不关心数据类型。为了逐字节拷贝，需要将其强制转换为 `char *` 和 `const char *`，使指针 `++` 一次刚好移动 1 个字节。
 - **size_t 循环变量**：参数 `n` 类型为 `size_t`（无符号整数），循环变量也使用 `size_t`，避免了有符号与无符号比较的编译警告。
 - **性能优化**：在函数开头加入 `if(n == 0 || dest == src) return dest;`，处理零拷贝和自身拷贝的边界情况，避免无意义的内存操作。
 
