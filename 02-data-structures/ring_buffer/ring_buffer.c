@@ -31,7 +31,7 @@ int rb_write(ring_buffer_t *rb,uint8_t data){
     }
 
     rb->buffer[rb->tail] = data;
-    rb->tail = (rb->tail+1) % rb->capacity; //加1后取模，满足绕圈要求
+    rb->tail = (rb->tail + 1) % rb->capacity; //加1后取模，满足绕圈要求
     rb->count++;
 
     return 0;
